@@ -242,42 +242,55 @@ body {
   align-items: center;
   overflow: hidden;
   padding: 146px 0 82px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 4, 10, 0.94) 0%,
+      rgba(2, 4, 10, 0.78) 44%,
+      rgba(2, 4, 10, 0.38) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 5, 12, 0.14) 0%,
+      rgba(3, 5, 12, 0.76) 100%
+    ),
+    url('./images/hero-background.jpg') center / cover no-repeat;
   isolation: isolate;
 }
 
 .hero-section::before {
   position: absolute;
-  z-index: -2;
+  z-index: 0;
   inset: 0;
   content: "";
-  opacity: 0.35;
-  background-image:
-    linear-gradient(rgba(33, 215, 244, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(33, 215, 244, 0.08) 1px, transparent 1px);
-  background-size: 54px 54px;
-  mask-image: linear-gradient(to bottom, black 10%, transparent 90%);
+  background:
+    radial-gradient(
+      circle at 78% 30%,
+      rgba(116, 43, 255, 0.2),
+      transparent 34%
+    ),
+    linear-gradient(rgba(33, 215, 244, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 215, 244, 0.04) 1px, transparent 1px);
+  background-size: auto, 54px 54px, 54px 54px;
+  pointer-events: none;
 }
 
 .hero-section::after {
   position: absolute;
-  z-index: -1;
-  top: 5%;
-  left: 50%;
-  width: 820px;
-  height: 820px;
+  z-index: 0;
+  inset: 0;
   content: "";
-  transform: translateX(-10%);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(33, 215, 244, 0.2),
-    rgba(64, 63, 255, 0.08) 42%,
-    transparent 68%
+  background: linear-gradient(
+    180deg,
+    transparent 68%,
+    rgba(5, 7, 11, 0.92) 100%
   );
-  filter: blur(8px);
+  pointer-events: none;
 }
 
 .hero-section__layout {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1103,6 +1116,7 @@ body {
   .hero-section {
     min-height: auto;
     padding: 183px 0 72px;
+    background-position: 58% center;
   }
 
   .hero-section__title {
